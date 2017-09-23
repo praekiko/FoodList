@@ -3,7 +3,6 @@
 }
 
 
-
 body {
   background: #f5f5f5;
   max-width: 1200px;
@@ -29,7 +28,10 @@ body {
 }
 
 .container {
-  display: block;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
   padding: 18px 18px 28px 18px;
   background: white;
 
@@ -38,13 +40,6 @@ body {
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
   -webkit-transition: 0.3s ease;
   transition: 0.3s ease;
-
-  position: relative;
-  display: inline-block;
-  vertical-align: top;
-  width: 100%;
-
-
 }
 .container:hover {
   -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2), 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
@@ -53,27 +48,23 @@ body {
 
 
 .image {
-    width: 20%;
-
-    float: left;
-    width: 90px;
-    height: 90px;
-    padding-right: 8px;
-    overflow: hidden;
-
+  width: 20%;
+  float: left;
+  width: 90px;
+  height: 90px;
+  padding-right: 8px;
+  overflow: hidden;
 }
 
 .image img{
-    height: 90px;
-    width: auto;
-
+  height: 90px;
+  width: auto;
 }
 
 .detail {
-    width: 70%;
-    float: left;
-    padding-left: 8px;
-    /*border: 1px solid red;*/
+  width: 70%;
+  float: left;
+  padding-left: 8px;
 }
 
 .heart {
@@ -89,13 +80,9 @@ body {
 
 .distance {
   clear: right;
-  /*width: 20%;*/
   float: right;
-
   margin: 2px -10px 0 0;
-
   text-align: right;
-
   color: gray;
   font-size: 11px;
 }
@@ -104,7 +91,7 @@ body {
 @media screen and (max-width: 600px) {
   .container {
     display: block;
-    width: auto;
+    width: 100%;
     height: auto;
     margin: 10px auto;
   }
@@ -120,11 +107,9 @@ body {
   color: #444;
   font-size: 1.00rem;
   font-weight: 500;
-  /*line-height: 1.75rem;*/
 }
 .review-cost-list {
   margin: 8px 0 8px;
-
   color: black;
   display: flex;
   flex-flow: row;
@@ -141,7 +126,6 @@ body {
   margin: 2px 8px 0 0px;
   display: flex;
   flex-flow: row;
-  /*font-weight: bold;*/
   font-size: 11px;
 }
 .cost {
@@ -151,9 +135,6 @@ body {
   font-weight: normal;
   font-size: 12px;
   font-weight: 500;
-
-  /*color: #999;*/
-
 }
 
 .choiceButton {
@@ -161,7 +142,6 @@ body {
   display: flex;
   height: 20px;
   align-items: center;
-  /*justify-content: center;*/
   text-decoration: none;
   color: #008CBA;
 
@@ -181,12 +161,9 @@ body {
 }
 
 .category {
-  /*color: #444;*/
   margin: 4px 0 0;
   font-size: 0.75rem;
   font-weight: 200;
-
-
 }
 
 .logo {
@@ -214,9 +191,7 @@ body {
   right: 0;
   width: auto;
   margin: 0 8px 8px 18px;
-  /*padding: 20px;*/
   border-top: 1px solid #eee;
-  /*font-size: 13px;*/
 }
 
 
