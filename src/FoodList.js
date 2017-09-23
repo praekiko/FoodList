@@ -12,29 +12,21 @@ class FoodList extends Component {
                       {id: 3, title: 'อาหารฟิวชั่น'}];
     return (
       
-
-      <div className="app">
-        <div className="container">      
-
-                  
-          <FoodInformation  foodImage={foodImage}
-                            foodTitle="Isao" 
-                            review="295" 
-                            cost="฿฿฿" 
-                            isUserChoice="true" 
-                            category={categories}
-                            distance="8500"
-                            />  
-
-          
-          <span className="footer"></span>
-        
-        </div>
+      <div>    
+        <FoodInformation  foodImage={foodImage}
+                          foodTitle="Isao" 
+                          review="295" 
+                          cost="฿฿฿" 
+                          isUserChoice="true" 
+                          category={categories}
+                          distance="8500"
+                          />  
 
       </div>
     );
   }
 }
+
 
 class FoodInformation extends Component {
 
@@ -44,40 +36,50 @@ class FoodInformation extends Component {
     if(this.props.isUserChoice){
       usersChoice = `USERS' CHOICE 2017`
     }
+    
+
     return (
       <div >
-        <div className="image">
-          <img src={this.props.foodImage} alt="foodImage" />          
-        </div>
-
-        <div className="detail">
-          <div className="title">
-            {this.props.foodTitle}
-          </div>
-
-          <div className="reviewCost">
-            <img src={grayReview} className="reviewImage" alt="review" />
-            <div className="review">
-              {this.props.review}    
+        <ul className="app ">
+          <li className="container">
+            <div className="image">
+              <img src={this.props.foodImage} alt="foodImage" />          
             </div>
-            <div className="cost"> 
-              {this.props.cost}฿
+
+            <div className="detail">
+              <span className="title">
+                {this.props.foodTitle}
+              </span>
+
+              <div className="review-cost-list">
+                <img src={grayReview} className="reviewImage" alt="review" />
+                <span className="review">
+                  {this.props.review}    
+                </span>
+                <span className="cost"> 
+                  {this.props.cost}฿
+                </span>
+              </div>
+
+              <button type="button" className="choiceButton">
+                <img src={wongnaiLogo} className="logo" alt="logo" />
+                <span className="choice">{usersChoice}</span>
+              </button>
+
+              <span className="category">
+                ประเภท {this._getCategory()}
+              </span>            
+
             </div>
-          </div>
 
-          <button type="button" className="choiceButton">
-            <img src={wongnaiLogo} className="logo" alt="logo" />
-            <div className="choice">{usersChoice}</div>
-          </button>
-
-          <div className="category">
-            ประเภท {this._getCategory()}
-          </div>            
-
-        </div>
-
-        <img src={grayHeart} className="heart" alt="heart" />
-        <div className="distance"> {this._getDistance()} </div>
+            <img src={grayHeart} className="heart" alt="heart" />
+            <div className="distance"> {this._getDistance()} </div>
+          
+            <span className="footer">      
+            </span> 
+      
+          </li>
+        </ul>
 
       </div>  
 
@@ -97,7 +99,7 @@ class FoodInformation extends Component {
 
   _getCategory() {    
 
-    return (this.props.category.map((cat) => <a href="#" className="link" key={cat.id}>{cat.title} </a>)
+    return (this.props.category.map((cat) => <a href="" className="link" key={cat.id}>{cat.title} </a>)
                                .reduce((prev, curr) => [prev, ' , ', curr]));
   }
 }
