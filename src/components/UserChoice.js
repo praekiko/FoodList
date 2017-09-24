@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import wongnaiLogo from './images/wongnai-badge.png';
+import wongnaiLogo from '../images/wongnai-badge.png';
 
 
 class UserChoice extends Component {

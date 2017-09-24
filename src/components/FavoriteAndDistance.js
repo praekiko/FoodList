@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import grayHeart from './images/gray-heart.png';
+import grayHeart from '../images/gray-heart.png';
 
 
 class FavoriteAndDistance extends Component {

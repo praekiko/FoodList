@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import foodImage1 from './images/food.jpg';
-import foodImage2 from './images/indus-restaurant.jpg';
+import foodImage1 from '../images/food.jpg';
+import foodImage2 from '../images/indus-restaurant.jpg';
 
 import FoodImage from './FoodImage'
 import FoodDetail from './FoodDetail'

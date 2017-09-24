@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import grayReview from './images/gray-review.png';
+import grayReview from '../images/gray-review.png';
 
 
 class FoodDetail extends Component {
