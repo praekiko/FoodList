@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import foodImage1 from './images/food.jpg';
 import foodImage2 from './images/indus-restaurant.jpg';
 
+import FoodImage from './FoodImage'
 import FoodDetail from './FoodDetail'
+import UserChoice from './UserChoice'
+import FoodCategories from './FoodCategories'
+import FavoriteAndDistance from './FavoriteAndDistance'
 
 class FoodList extends Component {
   constructor() {
@@ -53,15 +57,32 @@ class FoodList extends Component {
       const image = Object.values(food.image);
       const foodCategory = food.category;
 
-      return (<FoodDetail foodImage={image}
-                          foodTitle={food.title} 
-                          review={food.review} 
-                          cost={food.cost} 
-                          isUserChoice={food.isUserChoice} 
-                          category={this._getCategoryByID(foodCategory)}
-                          distance={food.distance}
-                          key={food.id}
-                          /> );
+      return (  <div>
+                <ul className="app">
+                <li className="container" >
+
+                  <FoodImage foodImage={image}
+                             key={food.id} />
+                  <div className="detail">
+                    <FoodDetail  foodTitle={food.title} 
+                                review={food.review} 
+                                cost={food.cost}
+                                key={food.title}/>
+                    <UserChoice isUserChoice={food.isUserChoice} 
+                                key={food.isUserChoice}/>
+                    <FoodCategories category={this._getCategoryByID(foodCategory)} 
+                                    key={foodCategory[0]}/>
+                  </div>
+                  <FavoriteAndDistance  distance={food.distance} 
+                                        key={food.distance}/>
+
+                  <span className="footer">      
+                  </span>
+                </li>
+                </ul>
+                
+              </div>
+              );
     });
   }
 
