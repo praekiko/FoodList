@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import FoodList from './FoodList';
+import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<FoodList />, document.getElementById('food-list'));
+ReactDOM.render(<App />, document.getElementById('app'));
 registerServiceWorker();
