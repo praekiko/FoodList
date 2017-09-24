@@ -8,20 +8,42 @@ class FavoriteAndDistance extends Component {
     return (
       <div>
         <img src={grayHeart} className="heart" alt="heart" />
-        <div className="distance"> {this._getDistance()} </div>
+        <div className="distance"> {this._getDistanceFromLatLonInKm(this.props.currLat,
+                                                                    this.props.currLng,
+                                                                    this.props.destLat,
+                                                                    this.props.destLng)} </div>
       </div>
     )
   }
 
   /* Get the distance in meter or kilometer */
-  _getDistance() {
-    if(this.props.distance >= 0 && this.props.distance <= 1000){
-      return `${this.props.distance} ม.`
+  _getDistanceInString(d) {   
+
+    if(d % 10 <= 0){
+      let distance = d * 1000
+      return `${parseInt(distance)} ม.`
     }
     else {
-      let distance = this.props.distance / 1000
-      return `${distance.toLocaleString()} กม.` 
+      return `${parseInt(d)} กม.` 
     }
+  }
+
+  _getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
+    const R = 6371; // Radius of the earth in km
+    let dLat = this._deg2rad(lat2-lat1);  // this._deg2rad below
+    let dLon = this._deg2rad(lon2-lon1); 
+    let a = 
+      Math.sin(dLat/2) * Math.sin(dLat/2) +
+      Math.cos(this._deg2rad(lat1)) * Math.cos(this._deg2rad(lat2)) * 
+      Math.sin(dLon/2) * Math.sin(dLon/2)
+      ; 
+    let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+    let d = R * c; // Distance in km
+    return this._getDistanceInString(d);
+  }
+
+  _deg2rad(deg) {
+    return deg * (Math.PI/180)
   }
 }
 

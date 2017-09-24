@@ -107,6 +107,7 @@ body {
   color: #444;
   font-size: 1.00rem;
   font-weight: 500;
+  text-decoration: none;
 }
 .review-cost-list {
   margin: 8px 0 8px;

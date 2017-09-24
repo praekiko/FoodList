@@ -13,7 +13,7 @@ class FoodCategories extends Component {
   /* Get category in form of link split with comma */
   _getCategory() {    
 
-    return (this.props.category.map((cat) => <a href={cat.link} className="link" key={cat.id}>{cat.title} </a>)
+    return (this.props.category.map((cat) => <a href="" className="link" key={cat.id}>{cat.name} </a>)
                                .reduce((prev, curr) => [prev, ' , ', curr]));
   }
 }

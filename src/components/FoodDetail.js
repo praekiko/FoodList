@@ -9,9 +9,9 @@ class FoodDetail extends Component {
       <div >
     	
         {/* Food Title */}
-        <span className="title">
+        <a href={this.props.url} className="title">
           {this.props.foodTitle}
-        </span>
+        </a>
         {/* Review and cost */}
         <div className="review-cost-list">
           <img src={grayReview} className="reviewImage" alt="review" />
@@ -20,11 +20,19 @@ class FoodDetail extends Component {
             {this.props.review.toLocaleString()}    
           </span>
           <span className="cost"> 
-            {this.props.cost}
+            {this._getCostString()}
           </span>
         </div>
       </div>
     );
+  }
+  _getCostString() {
+    let costString = ""
+    for(let i = 0; i < this.props.cost; i++){
+      costString += "฿"
+    }
+
+    return costString
   }
 }
 
