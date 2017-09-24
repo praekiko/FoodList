@@ -21,14 +21,18 @@ class FavoriteAndDistance extends Component {
 
     if(d % 10 <= 0){
       let distance = d * 1000
-      return `${parseInt(distance)} ม.`
+      return `${parseInt(distance, 10)} ม.`
     }
     else {
-      return `${parseInt(d)} กม.` 
+      return `${parseInt(d, 10)} กม.` 
     }
   }
 
   _getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
+    // console.log("curlat", lat1)
+    // console.log("curlng", lon2)
+    // console.log("lat", lat2)
+    // console.log("lng", lon2)
     const R = 6371; // Radius of the earth in km
     let dLat = this._deg2rad(lat2-lat1);  // this._deg2rad below
     let dLon = this._deg2rad(lon2-lon1); 

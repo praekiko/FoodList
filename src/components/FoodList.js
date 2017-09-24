@@ -32,6 +32,8 @@ class FoodList extends Component {
       navigator.geolocation.getCurrentPosition((position) => {
         this.setState({currentLat: position.coords.latitude})
         this.setState({currentLng: position.coords.longitude}) 
+        console.log("curr Lat", this.state.currentLat)
+        console.log("curr Lng", this.state.currentLng)
       });
     } 
     else { 
@@ -79,7 +81,7 @@ class FoodList extends Component {
                                 review={food.statistic.numberOfReviews} 
                                 cost={food.priceRange.value}
                                 key={food.url}/>
-                    <UserChoice key={food.name}/>
+                    <UserChoice key={food.statistic.numberOfReviews}/>
                     <FoodCategories category={food.categories} 
                                     key={food.categories}/>
                   </div>
