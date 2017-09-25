@@ -20,12 +20,14 @@ class FoodDetail extends Component {
             {this.props.review.toLocaleString()}    
           </span>
           <span className="cost"> 
+            {/* Get cost range in string */}
             {this._getCostString()}
           </span>
         </div>
       </div>
     );
   }
+
   _getCostString() {
     let costString = ""
     for(let i = 0; i < this.props.cost; i++){
